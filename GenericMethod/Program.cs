@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using GenericMethod;
+
+internal class Program
 {
     static void Main(string[] args)
     {
@@ -6,6 +8,18 @@
         Console.WriteLine("test");
         Swap1<string>(ref a,ref b);
         Console.WriteLine(a+ ","+ b);
+        GenericClass<int> genericClass = new GenericClass<int>();
+        genericClass.AddItem(1/*"Item Added"*/);
+
+
+        TestClass.Test("Ali");
+        TestClass.Test(43345345);
+
+
+        TestClass.Test(true);
+
+        TestClass.Test(genericClass);
+
     }
     //This function is non generic as it does not supported other datatypes of refrence except integer
      static void Swap(ref int x, ref int y)
